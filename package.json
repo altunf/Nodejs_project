@@ -1,0 +1,15 @@
+{
+  "name": "nodejs_project",
+  "version": "1.0.0",
+  "description": "photographer portfolio app",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "author": "Fırat Altun",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
