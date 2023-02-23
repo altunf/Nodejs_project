@@ -1,42 +1,32 @@
 <header class="header_section">
-    <nav class="navbar navbar-expand-lg custom_nav-container">
-      <div class="custom_menu-btn">
-        <button onclick="openNav()">
+  <nav class="navbar navbar-expand-lg custom_nav-container">
+    <div class="custom_menu-btn">
+      <button onclick="openNav()">
+        <span class="s-1"> </span>
+        <span class="s-2"> </span>
+        <span class="s-3"> </span>
+      </button>
+    </div>
+    <div id="myNav" class="overlay">
+      <div class="menu_btn-style">
+        <button onclick="closeNav()">
           <span class="s-1"> </span>
           <span class="s-2"> </span>
           <span class="s-3"> </span>
         </button>
       </div>
-      <div id="myNav" class="overlay">
-        <div class="menu_btn-style ">
-          <button onclick="closeNav()">
-            <span class="s-1"> </span>
-            <span class="s-2"> </span>
-            <span class="s-3"> </span>
-          </button>
-        </div>
-        <div class="overlay-content">
-          <a class="active" href="index.html">
-            Home
-          </a>
-          <a class="" href="about.html">
-            About
-          </a>
-          <a class="" href="portfolio.html">
-            Portfolio
-          </a>
-          <a class="" href="team.html">
-            Team
-          </a>
-        </div>
+      <div class="overlay-content">
+        <a class="<%= link === 'index' && 'active' %>" href="/"> Home </a>
+        <a class="<%= link === 'about' && 'active' %>" href="/about"> About </a>
+        <a class="<%= link === 'photos' && 'active' %>" href="/photos"> Photos </a>
+        <a class="<%= link === 'users' && 'active' %>" href="/users"> Users </a>
       </div>
-      <a class="navbar-brand" href="index.html">
-        <span>
-          Photosec
-        </span>
-      </a>
-      <a href="" class="call_btn">
-        Call Us Now
-      </a>
-    </nav>
-  </header>
+    </div>
+    <a class="navbar-brand" href="/">
+      <span> Photosec </span>
+    </a>
+  
+   
+    <a href="/contact" class="call_btn">  Call Us Now </a>
+  </nav>
+</header>

@@ -1,17 +1,25 @@
 const getIndexPage = (req, res) => {
-  res.render("index");
+  res.render("index", {
+    link: "index"
+  });
 };
 
 const getAboutPage = (req, res) => {
-  res.render("about");
+  res.render("about" , {
+    link: "about"
+  } );
 };
 
 const getContactPage = (req, res) => {
-  res.render("contact");
+  res.render("contact" , {
+    link: "contact"
+  });
 };
 
-const getPortfolioPage = (req, res) => {
-  res.render("portfolio");
+const getPhotosPage = (req, res) => {
+  res.render("photos");
 };
-
-export { getIndexPage, getAboutPage, getContactPage, getPortfolioPage };
+const getUsersPage = (req, res) => {
+    res.render("users");
+  };
+export { getIndexPage, getAboutPage, getContactPage, getPhotosPage, getUsersPage };
