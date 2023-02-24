@@ -16,10 +16,6 @@ const getContactPage = (req, res) => {
   });
 };
 
-const getPhotosPage = (req, res) => {
-  res.render("photos");
-};
-const getUsersPage = (req, res) => {
-    res.render("users");
-  };
-export { getIndexPage, getAboutPage, getContactPage, getPhotosPage, getUsersPage };
+
+
+export { getIndexPage, getAboutPage, getContactPage,};

@@ -22,6 +22,7 @@ app.use(express.json())
 //routes
 app.use('/', pageRoute)
 app.use('/about', pageRoute)
+
 app.use('/photos', photoRoute)
 
 
