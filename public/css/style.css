@@ -318,6 +318,8 @@ a:focus {
 }
 
 /*end header section*/
+
+/* slider section*/
 .slider_section {
   background-image: url(../images/slider-bg.jpg);
   background-size: cover;
@@ -447,6 +449,8 @@ a:focus {
   color: #85310c;
 }
 
+/* about section*/
+
 .about_section .heading_container h2 {
   text-transform: uppercase;
 }
@@ -491,6 +495,9 @@ a:focus {
   -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
 }
+
+
+/* portfolio section*/
 
 .portfolio_section {
   text-align: center;
@@ -672,6 +679,8 @@ a:focus {
   color: #85310c;
 }
 
+/* team section*/
+
 .team_section .team_container {
   padding: 25px 45px;
 }
@@ -731,6 +740,8 @@ a:focus {
   opacity: 1;
   visibility: visible;
 }
+
+/* contact section*/
 
 .contact_section {
   position: relative;
@@ -819,7 +830,56 @@ a:focus {
   color: #85310c;
 }
 
+/* FORM */
+
+.main_form .form_control {
+  
+  padding: 0 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 66px;
+  font-size: 15px;
+  font-weight: normal;
+  border:#85310c solid 1px;
+}
+
+#request *::placeholder {
+  color: #d0d0cf;
+  opacity: 1;
+}
+
+.group_form {
+  margin-top: 5.5rem;
+  margin-bottom: 5.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.group_form .send_btn {
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #85310c;
+  color: #ffffff;
+  max-width: 159px;
+  width: 100%;
+  font-weight: 600;
+  height: 69px;
+  line-height: 69px;
+  border: 1px solid #85310c;
+  border-radius: 0;
+  margin-top: 75px;
+  text-transform: uppercase;
+}
+
+.group_form .send_btn:hover {
+  transition: ease-in all 0.3s;
+  background-color: transparent;
+  color: #85310c;
+}
+
 /* footer section*/
+
 .footer_section {
   background-color: #762500;
   color: #ffffff;

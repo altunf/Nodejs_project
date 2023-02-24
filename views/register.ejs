@@ -1,0 +1,67 @@
+<%- include('partials/_header') %>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <%- include('partials/_menu') %>
+    <!-- end header section -->
+  </div>
+
+  <!-- register section -->
+
+  <section class="portfolio_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="heading_container heading_center"
+            style="margin-bottom: 10rem"
+          >
+            <h2>Register</h2>
+          </div>
+        </div>
+        <div class="col-md-8 offset-md-2">
+          <form class="main_form" action="users/register" method="POST">
+            <div class="row">
+              <div class="col-md-12">
+                <input
+                  class="form_control"
+                  placeholder="Username"
+                  type="text"
+                  name="username"
+                />
+              </div>
+
+              <div class="col-md-12">
+                <input
+                  class="form_control"
+                  placeholder="Email"
+                  type="text"
+                  name="email"
+                />
+              </div>
+
+              <div class="col-md-12">
+                <input
+                  class="form_control"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                />
+              </div>
+              <div class="col-md-12">
+                <div class="group_form">
+                  <button class="send_btn">Register</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end portfolio section -->
+
+  <!-- footer section -->
+  <%- include('partials/_footer') %>
+</body>
