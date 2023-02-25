@@ -18,18 +18,41 @@
       <div class="overlay-content">
         <a class="<%= link === 'index' && 'active' %>" href="/"> Home </a>
         <a class="<%= link === 'about' && 'active' %>" href="/about"> About </a>
-        <a class="<%= link === 'photos' && 'active' %>" href="/photos"> Photos </a>
+        <a class="<%= link === 'photos' && 'active' %>" href="/photos">
+          Photos
+        </a>
+
+        <% if (user) { %>
+        <a
+          class="<%= link === 'dashboard' && 'active' %>"
+          href="/users/dashboard"
+        >
+          Dashboard
+        </a>
+
+        <% } %>
+
         <a class="<%= link === 'users' && 'active' %>" href="/users"> Users </a>
-        <a class="<%= link === 'login' && 'active' %>" href="/login"> Login </a>
-        <a class="<%= link === 'register' && 'active' %>" href="/register"> Register </a>
-    
       </div>
     </div>
     <a class="navbar-brand" href="/">
-      <span> Photosec </span>
+      <span> PhotoMarkt </span>
     </a>
-  
-   
-    <a href="/contact" class="call_btn">  Call Us Now </a>
+
+    <% if (user) { %>
+    <a class="call_btn" href="/logout"> Logout </a>
+    <% } else { %>
+    <div class="call_btn_1">
+      <a class="call_btn && <%= link === 'login' && 'active' %>" href="/login">
+        Login
+      </a>
+      <a
+        class="call_btn && <%= link === 'register' && 'active' %>"
+        href="/register"
+      >
+        Register
+      </a>
+    </div>
+    <% } %>
   </nav>
 </header>

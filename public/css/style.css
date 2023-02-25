@@ -159,6 +159,20 @@ body {
   margin-left: auto;
 }
 
+.custom_nav-container .call_btn_1 {
+  display: inline-block;
+  background-color: transparent;
+  color: #000000;
+  padding: 8px 25px;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
 .custom_nav-container .call_btn:hover {
   background-color: transparent;
   color: #ffffff;

@@ -1,3 +1,5 @@
+
+
 const getIndexPage = (req, res) => {
   res.render("index", {
     link: "index",
@@ -27,10 +29,18 @@ const getLoginPage = (req, res) => {
   });
 };
 
+const getLogout = (req, res) => {
+  res.cookie('jwt', '', {
+    maxAge: 1,
+  });
+  res.redirect('/');
+};
+
 export {
   getIndexPage,
   getAboutPage,
   getContactPage,
   getRegisterPage,
   getLoginPage,
+  getLogout
 };
