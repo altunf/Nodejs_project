@@ -26,7 +26,6 @@ const loginUser = async (req, res) => {
 
     if (user) {
       same = await bcrypt.compare(password, user.password);
-      console.log("user:::", same);
     } else {
       return res.status(401).json({
         succeeded: false,
@@ -35,11 +34,13 @@ const loginUser = async (req, res) => {
     }
 
     if (same) {
-      console.log("same:::", same);
-     return  res.status(200).json({
-        user,
-        token: createToken(user._id),
+      const token = createToken(user._id);
+      res.cookie("jwt", token, {
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 24,
       });
+
+      res.redirect('/users/dashboard')
     } else {
       return res.status(401).json({
         succeeded: false,
@@ -87,7 +88,13 @@ const getAUser = async (req, res) => {
 };
 
 const createToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: "1d" });
 };
 
-export { createUser, getAllUsers, getAUser, loginUser };
+const getDashboardPage = (req, res) => {
+  res.render("dashboard", {
+    link: "dashboard",
+  });
+};
+
+export { createUser, getAllUsers, getAUser, loginUser,getDashboardPage };
