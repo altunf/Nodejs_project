@@ -1,6 +1,7 @@
+
+
 body {
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
 }
 
 .layout_margin {
@@ -13,7 +14,6 @@ body {
   padding-bottom: 90px;
   
 }
-
 
 .layout_padding2 {
   padding-top: 75px;
@@ -881,9 +881,13 @@ a:focus {
 /* footer section*/
 
 .footer_section {
+  padding-top: 90px;
   background-color: #762500;
   color: #ffffff;
   padding: 0 15px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
 
 
 }

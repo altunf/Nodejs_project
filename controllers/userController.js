@@ -1,5 +1,6 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const createUser = async (req, res) => {
   try {
@@ -25,6 +26,7 @@ const loginUser = async (req, res) => {
 
     if (user) {
       same = await bcrypt.compare(password, user.password);
+      console.log("user:::", same);
     } else {
       return res.status(401).json({
         succeeded: false,
@@ -32,12 +34,18 @@ const loginUser = async (req, res) => {
       });
     }
 
-    same
-      ? res.status(200).send("you are logged in")
-      : res.status(401).json({
-          succeeded: false,
-          error: "password are not matched",
-        });
+    if (same) {
+      console.log("same:::", same);
+     return  res.status(200).json({
+        user,
+        token: createToken(user._id),
+      });
+    } else {
+      return res.status(401).json({
+        succeeded: false,
+        error: "password are not matched",
+      });
+    }
   } catch (error) {
     res.status(500).json({
       succeeded: false,
@@ -76,6 +84,10 @@ const getAUser = async (req, res) => {
       error,
     });
   }
+};
+
+const createToken = (userId) => {
+  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '1d' });
 };
 
 export { createUser, getAllUsers, getAUser, loginUser };
