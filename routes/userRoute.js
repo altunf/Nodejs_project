@@ -9,5 +9,8 @@ router.route("/").get(userController.getAllUsers);
 router
   .route("/:id")
   .get(userController.getAUser);
+  router
+  .route("/login")
+  .post(userController.loginUser);
 
 export default router;
