@@ -159,6 +159,26 @@ body {
   margin-left: auto;
 }
 
+.call_btn_2 {
+  display: inline-block;
+  background-color:  #ffffff;
+  color: #85310c;
+  padding: 8px 25px;
+  border: 1px solid   #ffffff;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.call_btn_2:hover {
+  background-color: #85310c;
+  color:  #ffffff;
+}
+
 .custom_nav-container .call_btn_1 {
   display: inline-block;
   background-color: transparent;

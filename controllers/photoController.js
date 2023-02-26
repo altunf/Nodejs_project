@@ -2,12 +2,13 @@ import Photo from "../models/photoModel.js";
 
 const createPhoto = async (req, res) => {
   try {
-    const photo = await Photo.create(req.body);
-
-    res.status(201).json({
-      succeeded: true,
-      photo,
+    await Photo.create({
+      name: req.body.name,
+      description: req.body.description,
+      user: res.locals.user._id,
     });
+
+    res.status(201).redirect("/users/dashboard");
   } catch (error) {
     res.status(500).json({
       succeeded: false,
@@ -20,10 +21,10 @@ const getAllPhotos = async (req, res) => {
   try {
     const photos = await Photo.find({});
 
-    res.status(200).render('photos', {
+    res.status(200).render("photos", {
       photos,
-      link: "photos"
-    })
+      link: "photos",
+    });
   } catch (error) {
     res.status(500).json({
       succeeded: false,
@@ -34,12 +35,12 @@ const getAllPhotos = async (req, res) => {
 
 const getAPhoto = async (req, res) => {
   try {
-    const photo = await Photo.findById({_id: req.params.id});
+    const photo = await Photo.findById({ _id: req.params.id });
 
-    res.status(200).render('photo', {
+    res.status(200).render("photo", {
       photo,
-      link: "photos"
-    })
+      link: "photos",
+    });
   } catch (error) {
     res.status(500).json({
       succeeded: false,
@@ -47,7 +48,5 @@ const getAPhoto = async (req, res) => {
     });
   }
 };
-
-
 
 export { createPhoto, getAllPhotos, getAPhoto };
