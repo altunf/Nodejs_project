@@ -9,7 +9,7 @@
 
   <!-- user section -->
 
-  <section class="portfolio_section layout_padding" style="background-color: #a34318; color:#ffffff; ">
+  <section class="portfolio_section" style="padding: 4.5rem; background-color: #111526; color:#ffffff; ">
     <div class="container-fluid">
       <div class="row " >
         <div class="container-fluid text_center">
@@ -26,7 +26,7 @@
       </div>
       <div class="portfolio_container">
         <div class="row">
-          <div class="img-box">
+          <div class="img-box" >
             <img src="/images/about-img.jpg" alt="" />
           </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="row">
           <% for (photo of photos) { %>
           <div class="img-box">
-            <img src="/images/p4.jpg" alt="" />
+            <img src="<%= photo.url %>" alt="/<%= photo._id %>" />
             <div class="btn-box">
               <a href="/photos/<%= photo._id %>">
                 <div>
@@ -123,6 +123,7 @@
                 class="main_form"
                 method="POST"
                 action="/photos"
+                enctype="multipart/form-data"
               >
                 <div class="row">
                   <div class="col-md-12">
@@ -144,7 +145,7 @@
                   </div>
 
                   <div style="margin-bottom: 20px" class="col-md-12">
-                    <input type="file" class="form-control-file" />
+                    <input type="file" name="image" class="form-control-file" />
                   </div>
 
                   <div class="col-md-12">
