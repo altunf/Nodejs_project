@@ -9,14 +9,14 @@
 
   <!-- user section -->
 
-  <section class="portfolio_section" style="padding: 4.5rem; background-color: #111526; color:#ffffff; ">
+  <section
+    class="portfolio_section"
+    style="padding: 4.5rem; background-color: #111526; color: #ffffff"
+  >
     <div class="container-fluid">
-      <div class="row " >
+      <div class="row">
         <div class="container-fluid text_center">
-          <div
-            class="heading_container heading_center"
-            
-          >
+          <div class="heading_container heading_center">
             <h2>Welcome <%= user.username %></h2>
           </div>
           <p>
@@ -26,8 +26,12 @@
       </div>
       <div class="portfolio_container">
         <div class="row">
-          <div class="img-box" >
-            <img src="/images/about-img.jpg" alt="" />
+          <div class="mx-auto">
+            <div class="team_box">
+              <div class="img-box">
+                <img src="/images/team1.jpg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -49,7 +53,7 @@
 
   <!-- end user section -->
 
-   <!-- gallery section -->
+  <!-- gallery section -->
 
   <section class="portfolio_section layout_padding">
     <div class="container">
@@ -86,7 +90,9 @@
     </div>
   </section>
 
-<!-- end gallery section -->
+  <!-- end gallery section -->
+
+    <!-- modal section -->
   <div
     class="modal fade bd-example-modal-lg"
     tabindex="-1"
@@ -161,6 +167,8 @@
       </div>
     </div>
   </div>
+  <!-- end modal section -->
+  
   <!-- footer section -->
   <%- include('partials/_footer') %>
 </body>

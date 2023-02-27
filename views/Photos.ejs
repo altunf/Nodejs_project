@@ -18,7 +18,7 @@
         <div class="row">
           <% for (photo of photos) { %>
           <div class="img-box">
-            <img src="images/p4.jpg" alt="" />
+            <img src="<%= photo.url %>" alt="" />
             <div class="btn-box">
               <a href="/photos/<%= photo._id %>">
                 <div>

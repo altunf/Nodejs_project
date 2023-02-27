@@ -7,36 +7,152 @@
     <!-- end header section -->
   </div>
 
-  <!-- team section -->
-  <section class="team_section">
+  <!-- user section -->
+
+  <section
+    class="portfolio_section"
+    style="padding: 4.5rem; background-color: #111526; color: #ffffff"
+  >
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 col-md-5 detail-box detail_box_common text_center">
+        <div class="container-fluid text_center">
           <div class="heading_container heading_center">
-            <h2><%= user.username %></h2>
+            <h2> <%= user.username %></h2>
           </div>
           <p>
-            The point of using LoremIt is a long established fact that a reader
-            will be distracted by the readable content of a page when looking at
-            its layout. The point of using Lorem
+            It is a long established fact that a reader will be distracted by
           </p>
         </div>
-        <div class="col-lg-8 col-md-7 team_container text_center">
-          <div class="row">
-            <div class="col-sm-6 mx-auto">
-              <div class="team_box">
-                <div class="img-box">
-                  <img src="/images/team2.jpg" alt="" />
-                </div>
+      </div>
+      <div class="portfolio_container">
+        <div class="row">
+          <div class="mx-auto">
+            <div class="team_box">
+              <div class="img-box">
+                <img src="/images/team1.jpg" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
-  <!-- end team section -->
 
+  <!-- end user section -->
+
+  <!-- gallery section -->
+
+  <section class="portfolio_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2><%= user.username %> portfolio</h2>
+      </div>
+      <div class="portfolio_container">
+        <div class="row">
+          <% for (photo of photos) { %>
+          <div class="img-box">
+            <img src="<%= photo.url %>" alt="/<%= photo._id %>" />
+            <div class="btn-box">
+              <a href="/photos/<%= photo._id %>">
+                <div>
+                  <h3 style="padding-top: 10px"><%= photo.name %></h3>
+                  <i
+                    class="fa fa-share-alt"
+                    aria-hidden="true"
+                    style="padding-top: 4.6rem"
+                  ></i>
+                  <p style="padding-top: 10px">
+                    <%= photo.description.substring(0, 15) + '...' %>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div>
+        <a href="" class="read_btn"> See More </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end gallery section -->
+  <div
+    class="modal fade bd-example-modal-lg"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div style="margin-top: 50px; margin-bottom: 50px" class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="text_align_center text_center">
+                <h2
+                  style="font-size: 30px; margin-bottom: 20px; color: #85310c"
+                >
+                  Add New Photo
+                </h2>
+              </div>
+            </div>
+            <div class="col-md-10 offset-md-1">
+              <form
+                id="request"
+                class="main_form"
+                method="POST"
+                action="/photos"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-md-12">
+                    <input
+                      class="form_control"
+                      placeholder="Name"
+                      type="text"
+                      name="name"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    <textarea
+                      name="description"
+                      style="height: 150px"
+                      class="form_control"
+                      placeholder="Description"
+                      rows="5"
+                    ></textarea>
+                  </div>
+
+                  <div style="margin-bottom: 20px" class="col-md-12">
+                    <input type="file" name="image" class="form-control-file" />
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="group_form">
+                      <button class="read_more">Upload File</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- footer section -->
   <%- include('partials/_footer') %>
 </body>
