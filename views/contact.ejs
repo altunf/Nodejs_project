@@ -6,66 +6,185 @@
     <%- include('partials/_menu') %>
     <!-- end header section -->
 
-  <!-- contact section -->
+    <!-- contact section -->
 
-  <section class="contact_section ">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 map_container">
-          <div class="map">
-            <div id="googleMap"></div>
+    <section class="contact_section">
+      <div class="container-fluid" style="padding: 18.6rem">
+        <div class="row">
+          <div class="col-md-8 map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+          <div class="col-md-4 detail-box detail_box_common">
+            <div>
+              <div class="heading_container">
+                <h2>Get In Touch</h2>
+              </div>
+              <div class="info_contact">
+                <div class="contact_link_box">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span> Location </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span> Call +01 1234567890 </span>
+                  </a>
+                  <a
+                    data-toggle="modal"
+                    data-target=".bd-example-modal-lg"
+                    type="text"
+                    href=""
+                  >
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span> demo@gmail.com </span>
+                  </a>
+                </div>
+                <div class="info_social">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 detail-box detail_box_common">
-          <div>
-            <div class="heading_container">
-              <h2>
-                Get In Touch
-              </h2>
-            </div>
-            <div class="info_contact">
-              <div class="contact_link_box">
-                <a href="">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>
-                    Location
-                  </span>
-                </a>
-                <a href="">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span>
-                    Call +01 1234567890
-                  </span>
-                </a>
-                <a href="">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    demo@gmail.com
-                  </span>
-                </a>
+      </div>
+    </section>
+
+    <!-- end contact section -->
+
+    <!-- modal section -->
+    <div
+      id="updateModal"
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div style="margin-top: 50px; margin-bottom: 50px" class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text_align_center text_center">
+                  <h2
+                    style="font-size: 30px; margin-bottom: 20px; color: #85310c"
+                  >
+                    Send Mail
+                  </h2>
+                </div>
               </div>
-              <div class="info_social">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
+              <div class="col-md-10 offset-md-1">
+                <form
+                  id="request"
+                  class="main_form"
+                  action="/contact"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <div class="col-md-12">
+                    <div
+                      style="display: none"
+                      class="alert alert-success"
+                      id="sendMessage"
+                    ></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input
+                        class="form_control"
+                        placeholder="Your name"
+                        type="text"
+                        name="name"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <input
+                        class="form_control"
+                        placeholder="Your Email"
+                        type="text"
+                        name="email"
+                      />
+                    </div>
+                    <div class="col-md-12">
+                      <textarea
+                        name="message"
+                        style="height: 150px"
+                        class="form_control"
+                        placeholder="Your Message"
+                        rows="5"
+                      ></textarea>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="group_form">
+                        <button class="read_more">Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <!-- end modal section -->
 
-  <!-- end contact section -->
+    <script>
+      const form = document.querySelector("form");
+      const sendMessage = document.querySelector("#sendMessage");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = form.name.value;
+        const email = form.email.value;
+        const message = form.message.value;
+        try {
+          const res = await fetch("/contact", {
+            method: "POST",
+            body: JSON.stringify({ name, email, message }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await res.json();
 
-  <!-- footer section -->
-  <%- include('partials/_footer') %>
+          if (data.succeeded) {
+            sendMessage.textContent = "Your Message Received Successfully";
+            sendMessage.style.display = "block";
+            setTimeout(() => {
+              sendMessage.style.display = "none";
+              form.name.value = "";
+              form.email.value = "";
+              form.message.value = "";
+            }, 5000);
+          }
+        } catch (err) {
+          console.log("ERR::", err);
+        }
+      });
+    </script>
+    <!-- footer section -->
+    <%- include('partials/_footer') %>
+  </div>
+</body>

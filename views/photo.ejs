@@ -25,7 +25,7 @@
           Photographer: <%= photo.user.username %>
         </a>
       </div>
-
+      <% if (isOwner) { %>
       <div style="margin-top: 30px">
         <ul style="display: flex; justify-content: space-between">
           <li>
@@ -49,6 +49,8 @@
           </li>
         </ul>
       </div>
+
+      <% }%>
     </div>
   </section>
   <!-- end portfolio section -->
