@@ -11,16 +11,19 @@
 
   <section
     class="portfolio_section"
-    style="padding: 4.5rem; background-color: #111526; color: #ffffff"
+    style="padding: 4.5rem; background-color: #023430; color: #ffffff"
   >
     <div class="container-fluid">
       <div class="row">
         <div class="container-fluid text_center">
           <div class="heading_container heading_center">
-            <h2> <%= user.username %></h2>
+            <h2><%= user.username %></h2>
           </div>
-          <p>
-            It is a long established fact that a reader will be distracted by
+          <p class="container">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+            similique provident maxime? Ratione explicabo qui, ducimus adipisci
+            aliquid possimus? Reprehenderit sapiente officiis quia debitis
+            consequuntur ipsum suscipit a eaque illum?
           </p>
         </div>
       </div>
@@ -28,14 +31,11 @@
         <div class="row">
           <div class="mx-auto">
             <div class="team_box">
-              <div class="img-box">
-                <img src="/images/team1.jpg" alt="" />
-              </div>
+              <img src="/images/team1.jpg" alt="" />
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -52,15 +52,15 @@
         <div class="row">
           <% for (photo of photos) { %>
           <div class="img-box">
-            <img src="<%= photo.url %>" alt="/<%= photo._id %>" />
+            <img src="<%= photo.url %>" alt="/<%= photo._id %>"  style="height: 20rem; object-fit: cover;"/>
             <div class="btn-box">
               <a href="/photos/<%= photo._id %>">
                 <div>
                   <h3 style="padding-top: 10px"><%= photo.name %></h3>
                   <i
-                    class="fa fa-share-alt"
+                    class="fa fa-external-link-square"
                     aria-hidden="true"
-                    style="padding-top: 4.6rem"
+                    style="padding-top: 3rem"
                   ></i>
                   <p style="padding-top: 10px">
                     <%= photo.description.substring(0, 15) + '...' %>
@@ -72,9 +72,7 @@
           <% } %>
         </div>
       </div>
-      <div>
-        <a href="" class="read_btn"> See More </a>
-      </div>
+ 
     </div>
   </section>
 

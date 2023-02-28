@@ -10,46 +10,47 @@
   <!-- team section -->
   <section
     class="portfolio_section"
-    style="padding: 4.5rem; background-color: #111526; color: #ffffff"
+    style="padding: 4.5rem; background-color: #023430; color: #ffffff"
   >
     <div class="container-fluid">
-   
+      <div class="row">
+        <div class="container-fluid text_center">
+          <div class="heading_container heading_center">
+            <h2>USERS</h2>
+          </div>
+          <p class="container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            tenetur saepe dolor itaque sint deleniti optio culpa eveniet
+            dolores? Necessitatibus voluptatibus laudantium consectetur amet
+            sunt quam autem ipsum facere eos!
+          </p>
+        </div>
+      </div>
+      <div class="portfolio_container">
         <div class="row">
-          <div class="container-fluid text_center">
-            <div class="heading_container heading_center">
-              <h2>USERS</h2>
-            </div>
-            <p>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo tenetur saepe dolor itaque sint deleniti optio culpa eveniet dolores? Necessitatibus voluptatibus laudantium consectetur amet sunt quam autem ipsum facere eos!
-            </p>
-          </div>
-        </div>
-        <div class="portfolio_container">
-          <div class="row">
-            <% for (user of users) { %>
+          <% for (user of users) { %>
 
-            <div class="mx-auto">
-              <div class="team_box">
-                <div class="img-box">
-                  <img src="images/team1.jpg" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5><%= user.username %></h5>
-                  <div class="social-box">
-                    <a href="/users/<%= user._id %>">
-                      <i
-                        class="fa fa-external-link-square"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
+          <div class="mx-auto">
+            <div class="team_box">
+              <img src="images/team1.jpg" alt="" />
+
+
             </div>
-            <% } %>
+            <div class="social-box " style="margin-top: 2rem; text-transform: uppercase;">
+              <h5><%= user.username %></h5>
+         
+                <a href="/users/<%= user._id %>">
+                  <i
+                    class="fa fa-external-link-square"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+   
+            </div>
           </div>
+          <% } %>
         </div>
-  
+      </div>
     </div>
   </section>
   <!-- end team section -->

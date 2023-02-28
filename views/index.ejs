@@ -10,18 +10,19 @@
       <div class="container-fluid">
         <div class="row">
           <div class="detail-box col-lg-4 col-md-5">
-            <div id="" class="carousel slide slider_text_carousel" data-ride="carousel">
+            <div
+              id=""
+              class="carousel slide slider_text_carousel"
+              data-ride="carousel"
+            >
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="detail_content">
                     <div>
                       <h1>
-                        Photography <br>
+                        Photography <br />
                         Studio
                       </h1>
-                      <a href="" class="">
-                        Read more
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -29,12 +30,9 @@
                   <div class="detail_content">
                     <div>
                       <h1>
-                        Photography <br>
+                        Photography <br />
                         Studio
                       </h1>
-                      <a href="" class="">
-                        Read more
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -42,38 +40,61 @@
                   <div class="detail_content">
                     <div>
                       <h1>
-                        Photography <br>
+                        Photography <br />
                         Studio
                       </h1>
-                      <a href="" class="">
-                        Read more
-                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="img-box col-lg-8 col-md-7 " >
-            <div id="" class="carousel slide slider_image_carousel carousel-fade" data-ride="carousel">
-              <div class="carousel-inner " >
-                <div class="carousel-item active" >
-                  <img src="<%= photos[0].url %>" alt="" />
-                </div>
-                <div class="carousel-item" >
-                  <img src="<%= photos[1].url %>" alt=""  />
+          <div class="img-box col-lg-8 col-md-7">
+            <div
+              id=""
+              class="carousel slide slider_image_carousel carousel-fade"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="<%= photos[0].url %>"
+                    alt=""
+                    style="max-height: 66rem; object-fit: cover"
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src="<%= photos[2].url %>" alt="" />
+                  <img
+                    src="<%= photos[1].url %>"
+                    alt=""
+                    style="max-height: 66rem; object-fit: cover"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="<%= photos[2].url %>"
+                    alt=""
+                    style="max-height: 66rem; object-fit: cover"
+                  />
                 </div>
               </div>
             </div>
             <div class="carousel_btn-box">
-              <a class="slider_btn_prev" href="" role="button" data-slide="prev">
+              <a
+                class="slider_btn_prev"
+                href=""
+                role="button"
+                data-slide="prev"
+              >
                 <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="slider_btn_next" href="" role="button" data-slide="next">
+              <a
+                class="slider_btn_next"
+                href=""
+                role="button"
+                data-slide="next"
+              >
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                 <span class="sr-only">Next</span>
               </a>
@@ -81,16 +102,11 @@
           </div>
         </div>
       </div>
-
     </section>
     <!-- end slider section -->
   </div>
 
-  <!-- about section -->
 
-
-
-  <!-- end about section -->
 
   <!-- portfolio section -->
   <section class="portfolio_section layout_padding">
@@ -102,15 +118,19 @@
         <div class="row">
           <% for (photo of photos) { %>
           <div class="img-box">
-            <img src="<%= photo.url %>" alt="" />
+            <img
+              src="<%= photo.url %>"
+              alt=""
+              style="height: 20rem; object-fit: cover"
+            />
             <div class="btn-box">
               <a href="/photos/<%= photo._id %>">
                 <div>
                   <h3 style="padding-top: 10px"><%= photo.name %></h3>
                   <i
-                    class="fa fa-share-alt"
+                    class="fa fa-external-link-square"
                     aria-hidden="true"
-                    style="padding-top: 4.6rem"
+                    style="padding-top: 3rem"
                   ></i>
                   <p style="padding-top: 10px">
                     <%= photo.description.substring(0, 15) + '...' %>
@@ -122,16 +142,14 @@
           <% } %>
         </div>
       </div>
-
     </div>
   </section>
   <!-- end portfolio section -->
 
-
   <!-- team section -->
-  <section class="portfolio_section ">
-    <div class="team_container">
-      <div class="row">
+  <section class="portfolio_section">
+    <div class="container">
+      <div class="row" >
         <div class="col-md-6 call_btn_2">
           <h3><%= numOfUser %></h3>
           <h5>Num of User</h5>
@@ -145,11 +163,29 @@
   </section>
   <!-- end team section -->
 
-  <!-- contact section -->
-
-
-
-  <!-- end contact section -->
+  <!-- about section -->
+  <section class="portfolio_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>About Us</h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using LoremIt is a long established fact that a reader will be
+          distracted by the readable content of a page when looking at its
+          layout. The point of using Lorem
+        </p>
+      </div>
+    </div>
+    <div class="portfolio_container">
+      <div class="row">
+        <div class="img-box">
+          <img src="images/about-img.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
 
   <!-- footer section -->
   <%- include('partials/_footer') %>

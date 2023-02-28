@@ -1,6 +1,6 @@
 <%- include('partials/_header') %>
 
-<body>
+<body class="sub_page">
   <div class="hero_area">
     <!-- header section strats -->
     <%- include('partials/_menu') %>
@@ -8,53 +8,45 @@
 
     <!-- contact section -->
 
-    <section class="contact_section">
-      <div class="container-fluid" style="padding: 18.6rem">
-        <div class="row">
-          <div class="col-md-8 map_container">
-            <div class="map">
-              <div id="googleMap"></div>
+    <section class="portfolio_section layout_padding"  >
+      <div class="container" >
+        <div class="heading_container heading_center">
+          <h2>Get In Touch</h2>
+        </div>
+        <div class="social-box">
+          <div class="contact_link_box">
+            <div>
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Location </span>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span> Call +01 1234567890 </span>
+              </a>
+            </div>
+
+            <div>
+              <a
+                data-toggle="modal"
+                data-target=".bd-example-modal-lg"
+                type="text"
+                href=""
+              >
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span> demo@gmail.com </span>
+              </a>
             </div>
           </div>
-          <div class="col-md-4 detail-box detail_box_common">
-            <div>
-              <div class="heading_container">
-                <h2>Get In Touch</h2>
-              </div>
-              <div class="info_contact">
-                <div class="contact_link_box">
-                  <a href="">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span> Location </span>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span> Call +01 1234567890 </span>
-                  </a>
-                  <a
-                    data-toggle="modal"
-                    data-target=".bd-example-modal-lg"
-                    type="text"
-                    href=""
-                  >
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span> demo@gmail.com </span>
-                  </a>
-                </div>
-                <div class="info_social">
-                  <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  </a>
-                  <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                  </a>
-                </div>
+        </div>
+
+        <div class="contact_section" style="margin-top: 10rem">
+          <div class="row">
+            <div class="col-md-12 map_container">
+              <div class="map">
+                <div id="googleMap"></div>
               </div>
             </div>
           </div>

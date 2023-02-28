@@ -17,16 +17,16 @@
       <div class="portfolio_container">
         <div class="row">
           <% for (photo of photos) { %>
-          <div class="img-box">
-            <img src="<%= photo.url %>" alt="" />
+          <div class="img-box" >
+            <img src="<%= photo.url %>" alt="" style="height: 20rem; object-fit: cover;" />
             <div class="btn-box">
               <a href="/photos/<%= photo._id %>">
                 <div>
                   <h3 style="padding-top: 10px"><%= photo.name %></h3>
                   <i
-                    class="fa fa-share-alt"
+                    class="fa fa-external-link-square"
                     aria-hidden="true"
-                    style="padding-top: 4.6rem"
+                    style="padding-top:3rem"
                   ></i>
                   <p style="padding-top: 10px">
                     <%= photo.description.substring(0, 15) + '...' %>
@@ -38,9 +38,7 @@
           <% } %>
         </div>
       </div>
-      <div>
-        <a href="" class="read_btn"> See More </a>
-      </div>
+
     </div>
   </section>
   <!-- end portfolio section -->
