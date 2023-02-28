@@ -24,33 +24,30 @@
         <a href="/users/<%= photo.user._id %>" class="read_btn">
           Photographer: <%= photo.user.username %>
         </a>
-      </div>
-      <% if (isOwner) { %>
-      <div style="margin-top: 30px">
-        <ul style="display: flex; justify-content: space-between">
-          <li>
-            <button
-              style="min-width: 266px"
-              class="read_more"
-              data-toggle="modal"
-              data-target="#updateModal"
-            >
-              Update
-            </button>
-          </li>
-          <li>
-            <a
-              style="min-width: 266px"
-              class="read_more"
-              href="/photos/<%= photo._id %>?_method=DELETE"
-              onclick="return confirm('Do you want to delete the photo')"
-              >Delete</a
-            >
-          </li>
-        </ul>
-      </div>
 
-      <% }%>
+        <% if (isOwner) { %>
+
+        <div style="display: flex; justify-content: space-between">
+          <a
+            style="min-width: 266px"
+            class="read_btn"
+            data-toggle="modal"
+            data-target="#updateModal"
+            href=""
+          >
+            Update
+          </a>
+          <a
+            style="min-width: 266px"
+            class="read_btn"
+            href="/photos/<%= photo._id %>?_method=DELETE"
+            onclick="return confirm('Do you want to delete the photo')"
+            >Delete</a
+          >
+        </div>
+
+        <% }%>
+      </div>
     </div>
   </section>
   <!-- end portfolio section -->
@@ -82,19 +79,22 @@
                 <h2
                   style="font-size: 30px; margin-bottom: 20px; color: #85310c"
                 >
-               Update Photo
+                  Update Photo
                 </h2>
               </div>
             </div>
             <div class="col-md-10 offset-md-1">
               <form
-              id="request" class="main_form" method="POST"
-              action="/photos/<%= photo._id %>?_method=PUT" enctype="multipart/form-data"
+                id="request"
+                class="main_form"
+                method="POST"
+                action="/photos/<%= photo._id %>?_method=PUT"
+                enctype="multipart/form-data"
               >
                 <div class="row">
                   <div class="col-md-12">
                     <input
-                    value="<%= photo.name %>"
+                      value="<%= photo.name %>"
                       class="form_control"
                       placeholder="Name"
                       type="text"
@@ -108,7 +108,9 @@
                       class="form_control"
                       placeholder="Description"
                       rows="5"
-                    ><%= photo.description %></textarea>
+                    >
+<%= photo.description %></textarea
+                    >
                   </div>
 
                   <div style="margin-bottom: 20px" class="col-md-12">

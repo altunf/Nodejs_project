@@ -31,21 +31,18 @@
           <% for (user of users) { %>
 
           <div class="mx-auto">
-            <div class="team_box">
+            <div class="team_box " style="margin: 2rem;">
               <img src="images/team1.jpg" alt="" />
-
-
             </div>
-            <div class="social-box " style="margin-top: 2rem; text-transform: uppercase;">
+            <div
+              class="social-box"
+              style="margin-top: 2rem; text-transform: uppercase"
+            >
               <h5><%= user.username %></h5>
-         
-                <a href="/users/<%= user._id %>">
-                  <i
-                    class="fa fa-external-link-square"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-   
+
+              <a href="/users/<%= user._id %>">
+                <i class="fa fa-external-link-square" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
           <% } %>
